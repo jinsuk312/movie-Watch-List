@@ -30,6 +30,7 @@ var connection = mysql.createConnection({
 })
 // when we connect, console.log the message, otherwise throw the error
 connection.connect(function (err) {
+    // throw err if there is an error
     if (err) throw err;
     console.log('Connected as id: ' + connection.threadId);
 })
@@ -52,17 +53,21 @@ app.post('/create', function (req, res) {
         res.redirect('/');
     })
 })
-
+// create an express route that updates a row of data in the mysql database, based on the movies id
 app.put('/update', function (req, res) {
     connection.query('UPDATE movies SET movie = ? WHERE id= ?;', [req.body.movie, req.body.id], function (err, results) {
+        // throw err if there is an error
         if (err) throw err;
+        // redirect to the main page when we get the query to the database and its succesful
         res.redirect('/');
     })
 })
-
+// creates an express route that deletes a row of data in mysql database, based on the movies id 
 app.delete('/delete', function (req, res) {
     connection.query("DELETE FROM movies WHERE id = ?;", [req.body.id], function (err, results) {
+        // throw err if there is an error
         if (err) throw err;
+        // redirect to the main page when we get the query to the database and its succesful
         res.redirect('/');
     })
 })

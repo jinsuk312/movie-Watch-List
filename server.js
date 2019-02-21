@@ -17,7 +17,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 // tell express our view engine is handlebars 
 app.set('view engine', 'handlebars');
 // Port we are listening for
-var port = 3000;
+var port = 80;
 app.listen(port);
 // create mysql connection
 var connection = mysql.createConnection({

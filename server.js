@@ -17,11 +17,11 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 // tell express our view engine is handlebars 
 app.set('view engine', 'handlebars');
 // Port we are listening for
-var port = 80;
+var port = 443;
 app.listen(port);
 // create mysql connection
 var connection = mysql.createConnection({
-    host: 'cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	',
+    host: 'cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     // user name
     user: 'ka2u2sqjn1okypec',
     // password

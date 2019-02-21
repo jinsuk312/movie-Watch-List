@@ -21,12 +21,13 @@ var port = 3000;
 app.listen(port);
 // create mysql connection
 var connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	',
     // user name
-    user: 'root',
+    user: 'ka2u2sqjn1okypec',
     // password
-    password: 'root',
-    database: 'movie_planner_DB'
+    password: 'g8e0qc45conl8djj',
+    database: 'ofzdifkpn53w0zz0',
+    port: 3306
 })
 // when we connect, console.log the message, otherwise throw the error
 connection.connect(function (err) {
